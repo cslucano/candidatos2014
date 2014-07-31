@@ -12,10 +12,10 @@ candidatos = db.candidatos
 #cursor = candidatos.find()
 
 # Los que postulan en la provincia de LIMA
-#cursor = candidatos.find({'d.objUbigeoPostulaBE.strDepartamento': 'LIMA','d.objUbigeoPostulaBE.strProvincia': 'LIMA'})
+cursor = candidatos.find({'d.objUbigeoPostulaBE.strDepartamento': 'LIMA','d.objUbigeoPostulaBE.strProvincia': 'LIMA'})
 
 # Los que postulan en el distrito de MAGDALENA DEL MAR - LIMA
-cursor = candidatos.find({'d.objUbigeoPostulaBE.strDepartamento': 'LIMA','d.objUbigeoPostulaBE.strProvincia': 'LIMA', 'd.objUbigeoPostulaBE.strDistrito': 'MAGDALENA DEL MAR'})
+#cursor = candidatos.find({'d.objUbigeoPostulaBE.strDepartamento': 'LIMA','d.objUbigeoPostulaBE.strProvincia': 'LIMA', 'd.objUbigeoPostulaBE.strDistrito': 'MAGDALENA DEL MAR'})
 
 of = codecs.open('output/candidatos.csv', 'w', 'utf-8')
 index = 0
