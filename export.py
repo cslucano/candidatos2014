@@ -56,15 +56,3 @@ for candidato in cursor:
     index = index + 1
 of.close()
 
-    
-#    for x in obj.values()[:-1]:
-#        try:
-#            if isinstance(x, int):
-#                x = str(x)
-#            of.write(unicode(x)),
-#            of.write(','),
-#        except:
-#            print type(x)
-#    of.write(unicode(obj.values()[-1]))
-#    of.write('\n')
-#of.close()
