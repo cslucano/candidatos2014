@@ -36,6 +36,13 @@ CREATE TABLE ingresos
     rentaPublico text
 );
 
-
+CREATE TABLE bienes
+(
+    valor_bienes_inmueble text,
+    num_bienes_mueble text,
+    candidato_id text,
+    num_bienes_inmueble text,
+    valor_bienes_mueble text
+);
 
 

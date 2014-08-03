@@ -55,6 +55,6 @@ db.bienes.aggregate([
     }
   },
   {
-    $limit : 10
+    $out : 'clean_bienes'
   }
 ]);
