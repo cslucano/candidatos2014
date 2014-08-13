@@ -8,8 +8,8 @@ db = connection.candidatos2014
 
 candidatos = db.candidatos
 
-#cursor = candidatos.find()
-cursor = candidatos.find().limit(10000)
+cursor = candidatos.find()
+#cursor = candidatos.find().limit(10000)
 
 of = codecs.open('output/candidatos.csv', 'w', 'utf-8')
 index = 0

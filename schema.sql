@@ -45,4 +45,3 @@ CREATE TABLE bienes
     valor_bienes_mueble text
 );
 
-
