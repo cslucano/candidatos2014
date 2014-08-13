@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import codecs
 import pymongo
+import json
 
 connection = pymongo.MongoClient('localhost')
 
@@ -16,30 +17,30 @@ index = 0
 for candidato in cursor:
     obj = dict()
     obj['candidato_id'] = str(candidato['candidato_id'])
-    obj['org_pol'] = candidato['d']['strRegistro_Org_Pol']
-    obj['cargo_autoridad'] = candidato['d']['objCargoAutoridadBE']['strCargoAutoridad']
-    obj['ubigeo_postula_dep'] = candidato['d']['objUbigeoPostulaBE']['strDepartamento']
-    obj['ubigeo_postula_pro'] = candidato['d']['objUbigeoPostulaBE']['strProvincia']
-    obj['ubigeo_portula_dis'] = candidato['d']['objUbigeoPostulaBE']['strDistrito']
-    obj['forma_designacio'] = candidato['d']['strFormaDesignacion']
-    obj['dni'] = candidato['d']['strDNI']
-    obj['appaterno'] = candidato['d']['strAPaterno']
-    obj['apmaterno'] = candidato['d']['strAMaterno']
-    obj['nombres'] = candidato['d']['strNombres']
-    obj['fdn'] = candidato['d']['strFecha_Nac']
+    obj['org_pol'] = json.dumps(candidato['d']['strRegistro_Org_Pol'])
+    obj['cargo_autoridad'] = json.dumps(candidato['d']['objCargoAutoridadBE']['strCargoAutoridad'])
+    obj['ubigeo_postula_dep'] = json.dumps(candidato['d']['objUbigeoPostulaBE']['strDepartamento'])
+    obj['ubigeo_postula_pro'] = json.dumps(candidato['d']['objUbigeoPostulaBE']['strProvincia'])
+    obj['ubigeo_portula_dis'] = json.dumps(candidato['d']['objUbigeoPostulaBE']['strDistrito'])
+    obj['forma_designacio'] = json.dumps(candidato['d']['strFormaDesignacion'])
+    obj['dni'] = json.dumps(candidato['d']['strDNI'])
+    obj['appaterno'] = json.dumps(candidato['d']['strAPaterno'])
+    obj['apmaterno'] = json.dumps(candidato['d']['strAMaterno'])
+    obj['nombres'] = json.dumps(candidato['d']['strNombres'])
+    obj['fdn'] = json.dumps(candidato['d']['strFecha_Nac'])
     obj['sexo'] = str(candidato['d']['intId_Sexo'])
-    obj['email'] = candidato['d']['strCorreo']
+    obj['email'] = json.dumps(candidato['d']['strCorreo'])
     #nacimiento
-    obj['nac_pais'] = candidato['d']['strPais']
-    obj['nac_ubigeo_dep'] = candidato['d']['objUbigeoNacimientoBE']['strDepartamento']
-    obj['nac_ubigeo_pro'] = candidato['d']['objUbigeoNacimientoBE']['strProvincia']
-    obj['nac_ubigeo_dis'] = candidato['d']['objUbigeoNacimientoBE']['strDistrito']
+    obj['nac_pais'] = json.dumps(candidato['d']['strPais'])
+    obj['nac_ubigeo_dep'] = json.dumps(candidato['d']['objUbigeoNacimientoBE']['strDepartamento'])
+    obj['nac_ubigeo_pro'] = json.dumps(candidato['d']['objUbigeoNacimientoBE']['strProvincia'])
+    obj['nac_ubigeo_dis'] = json.dumps(candidato['d']['objUbigeoNacimientoBE']['strDistrito'])
     #residencia
-    obj['residencia'] = candidato['d']['strResidencia']
-    obj['residencia_ubigeo_dep'] = candidato['d']['objUbigeoResidenciaBE']['strDepartamento']
-    obj['residencia_ubigeo_pro'] = candidato['d']['objUbigeoResidenciaBE']['strProvincia']
-    obj['residencia_ubigoe_dis'] = candidato['d']['objUbigeoResidenciaBE']['strDistrito']
-    obj['residencia_tiempo'] = candidato['d']['strTiempo_Residencia']
+    obj['residencia'] = json.dumps(candidato['d']['strResidencia'])
+    obj['residencia_ubigeo_dep'] = json.dumps(candidato['d']['objUbigeoResidenciaBE']['strDepartamento'])
+    obj['residencia_ubigeo_pro'] = json.dumps(candidato['d']['objUbigeoResidenciaBE']['strProvincia'])
+    obj['residencia_ubigoe_dis'] = json.dumps(candidato['d']['objUbigeoResidenciaBE']['strDistrito'])
+    obj['residencia_tiempo'] = json.dumps(candidato['d']['strTiempo_Residencia'])
     #obj[] = candidato['d']['']
     #obj[] = candidato['d']['']
 
@@ -49,7 +50,8 @@ for candidato in cursor:
         of.write(s)
         of.write('\n')
 
-    s = ','.join('\"'+unicode(x)+'\"' for x in obj.values())
+    #s = ','.join('\"'+unicode(x)+'\"' for x in obj.values())
+    s = ','.join(obj.values())
     of.write(s)
     of.write('\n')
     
