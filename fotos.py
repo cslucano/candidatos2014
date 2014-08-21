@@ -18,7 +18,8 @@ url_foto = 'http://200.48.102.67/pecaoe/06FOTOS/2014/'
 headers = {'Content-Type': 'application/json'}
 #for i in range(1, 116827):
 #for i in range(1, 10000):
-for i in range(10000, 30000):
+#for i in range(10000, 30000):
+for i in range(30000, 80000):
     try:
         dataDict['objCandidatoBE']['intId_Candidato'] = str(i)
         data = json.dumps(dataDict)
