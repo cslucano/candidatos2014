@@ -4,7 +4,7 @@ import urllib2
 import pymongo
 
 connection = pymongo.MongoClient('localhost')
-db = connection.candidatos2014
+db = connection.candidatos2014_2
 candidatos = db.candidatos
 candidatos.drop()
 

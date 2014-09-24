@@ -19,7 +19,8 @@ headers = {'Content-Type': 'application/json'}
 #for i in range(1, 116827):
 #for i in range(1, 10000):
 #for i in range(10000, 30000):
-for i in range(30000, 80000):
+#for i in range(30000, 80000):
+for i in range(80605, 116827):
     try:
         dataDict['objCandidatoBE']['intId_Candidato'] = str(i)
         data = json.dumps(dataDict)

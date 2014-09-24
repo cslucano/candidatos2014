@@ -1,31 +1,34 @@
-CREATE TABLE candidatos 
+CREATE TABLE candidatos_stage 
 (
-    candidato_id text,
+    candidato_id integer,
     residencia_ubigeo_pro text,
     nombres text,
     nac_pais text,
     nac_ubigeo_dep text,
+    postula_ubigeo text,
     forma_designacio text,
     residencia_tiempo text,
     dni text,
-    ubigeo_postula_dep text,
     residencia text,
-    ubigeo_postula_pro text,
     email text,
     cargo_autoridad text,
     appaterno text,
-    sexo text,
-    residencia_ubigoe_dis text,
+    postula_ubigeo_dis text,
+    sexo integer,
     residencia_ubigeo_dep text,
+    postula_ubigeo_pro text,
     org_pol text,
     apmaterno text,
+    postula_ubigeo_dep text,
     nac_ubigeo_pro text,
     fdn text,
+    residencia_ubigeo_dis text,
     nac_ubigeo_dis text,
-    ubigeo_portula_dis text
+    residencia_ubigeo text,
+    nac_ubigeo text
 );
 
-CREATE TABLE ingresos
+CREATE TABLE ingresos_stage
 (
     rentaPrivado text,
     remuneracionPrivado text,
@@ -36,7 +39,7 @@ CREATE TABLE ingresos
     rentaPublico text
 );
 
-CREATE TABLE bienes
+CREATE TABLE bienes_stage
 (
     valor_bienes_inmueble text,
     num_bienes_mueble text,
@@ -45,3 +48,12 @@ CREATE TABLE bienes
     valor_bienes_mueble text
 );
 
+CREATE TABLE bien_stage
+(
+   candidatojneid integer,
+   idbien integer,
+   nombre text,
+   descripcion text,
+   caracteristicas text,
+   valor double precision
+)
